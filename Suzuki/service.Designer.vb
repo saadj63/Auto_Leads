@@ -38,7 +38,6 @@ Partial Class service
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -47,6 +46,7 @@ Partial Class service
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
@@ -71,10 +71,12 @@ Partial Class service
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.PictureBox15 = New System.Windows.Forms.PictureBox()
+        Me.Label34 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -167,7 +169,6 @@ Partial Class service
         Me.Panel1.Controls.Add(Me.PictureBox3)
         Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Controls.Add(Me.PictureBox1)
-        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Label19)
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.Label13)
@@ -186,7 +187,7 @@ Partial Class service
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(277, 575)
+        Me.Panel1.Size = New System.Drawing.Size(277, 462)
         Me.Panel1.TabIndex = 14
         '
         'PictureBox7
@@ -259,16 +260,6 @@ Partial Class service
         Me.PictureBox1.TabIndex = 16
         Me.PictureBox1.TabStop = False
         '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(57, 420)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(107, 35)
-        Me.Button1.TabIndex = 15
-        Me.Button1.Text = "Use Services"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
         'Label19
         '
         Me.Label19.AutoSize = True
@@ -340,6 +331,16 @@ Partial Class service
         Me.Label15.Size = New System.Drawing.Size(94, 15)
         Me.Label15.TabIndex = 3
         Me.Label15.Text = "Vehicle Checkup"
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(283, 101)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(107, 35)
+        Me.Button1.TabIndex = 15
+        Me.Button1.Text = "Use Services"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Label27
         '
@@ -462,7 +463,7 @@ Partial Class service
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(309, 21)
+        Me.Label14.Location = New System.Drawing.Point(551, 10)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(31, 15)
         Me.Label14.TabIndex = 13
@@ -470,6 +471,7 @@ Partial Class service
         '
         'Panel2
         '
+        Me.Panel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.Controls.Add(Me.PictureBox14)
         Me.Panel2.Controls.Add(Me.PictureBox13)
         Me.Panel2.Controls.Add(Me.PictureBox12)
@@ -479,7 +481,6 @@ Partial Class service
         Me.Panel2.Controls.Add(Me.PictureBox8)
         Me.Panel2.Controls.Add(Me.Label30)
         Me.Panel2.Controls.Add(Me.Label29)
-        Me.Panel2.Controls.Add(Me.Label14)
         Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Controls.Add(Me.Label32)
         Me.Panel2.Controls.Add(Me.Label31)
@@ -493,10 +494,9 @@ Partial Class service
         Me.Panel2.Controls.Add(Me.Label28)
         Me.Panel2.Controls.Add(Me.Label26)
         Me.Panel2.Controls.Add(Me.Label27)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel2.Location = New System.Drawing.Point(463, 0)
+        Me.Panel2.Location = New System.Drawing.Point(697, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(514, 575)
+        Me.Panel2.Size = New System.Drawing.Size(583, 462)
         Me.Panel2.TabIndex = 15
         '
         'PictureBox14
@@ -587,6 +587,16 @@ Partial Class service
         Me.Label29.TabIndex = 16
         Me.Label29.Text = "Wheel Balancing"
         '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.White
+        Me.Button3.Location = New System.Drawing.Point(425, 101)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(107, 35)
+        Me.Button3.TabIndex = 19
+        Me.Button3.Text = "Refresh"
+        Me.Button3.UseVisualStyleBackColor = False
+        '
         'Label20
         '
         Me.Label20.AutoSize = True
@@ -608,11 +618,11 @@ Partial Class service
         'Button2
         '
         Me.Button2.BackColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(292, 420)
+        Me.Button2.Location = New System.Drawing.Point(563, 100)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(107, 35)
         Me.Button2.TabIndex = 16
-        Me.Button2.Text = "Dashboard"
+        Me.Button2.Text = "Customer Details"
         Me.Button2.UseVisualStyleBackColor = False
         '
         'PictureBox15
@@ -625,18 +635,31 @@ Partial Class service
         Me.PictureBox15.TabIndex = 18
         Me.PictureBox15.TabStop = False
         '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Location = New System.Drawing.Point(501, 9)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(31, 15)
+        Me.Label34.TabIndex = 24
+        Me.Label34.Text = "Date"
+        '
         'service
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Khaki
-        Me.ClientSize = New System.Drawing.Size(977, 575)
+        Me.ClientSize = New System.Drawing.Size(1280, 462)
+        Me.Controls.Add(Me.Label34)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.PictureBox15)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label25)
         Me.Controls.Add(Me.Label20)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Label14)
         Me.Name = "service"
         Me.Text = "Service History"
         Me.Panel1.ResumeLayout(False)
@@ -715,4 +738,6 @@ Partial Class service
     Friend WithEvents PictureBox10 As PictureBox
     Friend WithEvents PictureBox9 As PictureBox
     Friend WithEvents PictureBox15 As PictureBox
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Label34 As Label
 End Class

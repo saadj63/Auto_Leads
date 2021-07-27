@@ -1,4 +1,13 @@
 ﻿Imports System.Data.SqlClient
+Imports System
+Imports System.Collections.Generic
+Imports System.Linq
+Imports System.Text.RegularExpressions
+Imports System.Web
+Imports System.IO
+Imports System.Net
+Imports System.Text
+Imports System.Resources
 Public Class Use_Services
     Dim con As SqlConnection = New SqlConnection("Data Source=DESKTOP-QIKDG9C;Initial Catalog=masuzu;Integrated Security=True")
     Dim cmd As SqlCommand
@@ -21,7 +30,6 @@ Public Class Use_Services
     Dim result As Integer
 
     Private Sub Use_Services_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.WindowState = FormWindowState.Maximized
         gc.Enabled = False
         wa.Enabled = False
         wb.Enabled = False
@@ -99,7 +107,44 @@ Public Class Use_Services
 
         Dim dt As Date = Today
         Dim st As String = Label3.Text
-        Dim cd As String = Convert.ToInt32(st)
+        Dim cd As String = Convert.ToInt64(st)
+
+
+        Try
+            Dim conn As New SqlConnection("Data Source=DESKTOP-QIKDG9C;Initial Catalog=masuzu; Integrated Security=True")
+            conn.Open()
+            Dim cmd As New SqlCommand("Select * from Customers where card_id='" & Label3.Text & "'", conn)
+            Dim myreader As SqlDataReader
+            myreader = cmd.ExecuteReader
+            If myreader.Read Then
+
+                Dim mb = myreader("mobile_no")
+                Dim nm = myreader("name")
+
+
+                Dim strGet As String
+
+                strGet = "http://api.bulksmsgateway.in/sendmessage.php?user=saadj63&password=Saadj63@&mobile=" + mb + "&message=Dear " + nm + " Thank You for using Sai Auto Leads Services. Please Visit again !&sender=SAIAUL&type=3&template_id=1007562446365350659"
+
+                Dim webClient As New System.Net.WebClient
+                Dim result As String = webClient.DownloadString(strGet)
+
+
+
+
+
+            End If
+
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+
+        End Try
+
+
+
+
 
         If (gc.Checked = True) Then
 
@@ -209,6 +254,15 @@ Public Class Use_Services
     Private Sub saveData(sql As String)
 
         Try
+
+
+
+
+
+
+
+
+
             con.Open()
             cmd = New SqlCommand
             With cmd
@@ -217,13 +271,15 @@ Public Class Use_Services
                 result = .ExecuteNonQuery()
             End With
             If result > 0 Then
-                Me.Close()
+
 
             End If
 
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show("sql", ex.Message)
         Finally
+            Me.Close()
+
             con.Close()
         End Try
     End Sub
@@ -244,8 +300,9 @@ Public Class Use_Services
             End If
 
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show("usql", ex.Message)
         Finally
+            Me.Close()
             con.Close()
         End Try
 
@@ -268,8 +325,9 @@ Public Class Use_Services
             End If
 
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show("sql1", ex.Message)
         Finally
+            Me.Close()
             con.Close()
         End Try
     End Sub
@@ -290,8 +348,9 @@ Public Class Use_Services
             End If
 
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show("usql1", ex.Message)
         Finally
+            Me.Close()
             con.Close()
         End Try
 
@@ -316,6 +375,7 @@ Public Class Use_Services
         Catch ex As Exception
             MessageBox.Show("Sql2", ex.Message)
         Finally
+            Me.Close()
             con.Close()
         End Try
     End Sub
@@ -332,14 +392,14 @@ Public Class Use_Services
             End With
             If result > 0 Then
 
-                Dim s As New Use_Services
-                s.Show()
+
 
             End If
 
         Catch ex As Exception
             MessageBox.Show("uSql2", ex.Message)
         Finally
+            Me.Close()
             con.Close()
         End Try
 
@@ -363,6 +423,7 @@ Public Class Use_Services
         Catch ex As Exception
             MessageBox.Show("sql3", ex.Message)
         Finally
+            Me.Close()
             con.Close()
         End Try
     End Sub
@@ -385,6 +446,7 @@ Public Class Use_Services
         Catch ex As Exception
             MessageBox.Show("usql3", ex.Message)
         Finally
+            Me.Close()
             con.Close()
         End Try
 
@@ -408,6 +470,7 @@ Public Class Use_Services
         Catch ex As Exception
             MessageBox.Show("sql4", ex.Message)
         Finally
+            Me.Close()
             con.Close()
         End Try
     End Sub
@@ -430,6 +493,7 @@ Public Class Use_Services
         Catch ex As Exception
             MessageBox.Show("sql4", ex.Message)
         Finally
+            Me.Close()
             con.Close()
         End Try
 
@@ -452,6 +516,7 @@ Public Class Use_Services
         Catch ex As Exception
             MessageBox.Show("sql5", ex.Message)
         Finally
+            Me.Close()
             con.Close()
         End Try
     End Sub
@@ -472,8 +537,9 @@ Public Class Use_Services
             End If
 
         Catch ex As Exception
-            MessageBox.Show("usql5",ex.Message)
+            MessageBox.Show("usql5", ex.Message)
         Finally
+            Me.Close()
             con.Close()
         End Try
 
@@ -497,6 +563,7 @@ Public Class Use_Services
         Catch ex As Exception
             MessageBox.Show("sql6", ex.Message)
         Finally
+            Me.Close()
             con.Close()
         End Try
     End Sub
@@ -519,18 +586,16 @@ Public Class Use_Services
         Catch ex As Exception
             MessageBox.Show("usql6", ex.Message)
         Finally
+            Me.Close()
             con.Close()
         End Try
-        Dim d As New Dashboard
-        d.Show()
+
         Me.Close()
 
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Me.Close()
-        Dim d As New Dashboard
-        d.Show()
 
 
     End Sub
